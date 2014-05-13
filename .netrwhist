@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/media/900E-C1E6/ph699/kaizaki/frms'
+let g:netrw_dirhist_2='/home/trosh/prog/go/src/github.com/trosh/tri/.git/info'
+let g:netrw_dirhist_3='/home/trosh/etu/ph699/.git'
