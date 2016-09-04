@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/media/900E-C1E6/ph699/kaizaki/frms'
-let g:netrw_dirhist_2='/home/trosh/prog/go/src/github.com/trosh/tri/.git/info'
-let g:netrw_dirhist_3='/home/trosh/etu/ph699/.git'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/trosh/.vim'
+let g:netrw_dirhist_2='/home/trosh/.vim/bundle'
+let g:netrw_dirhist_3='/home/trosh/.vim/bundle/vim-surround'
+let g:netrw_dirhist_4='/home/trosh/etu/tmns/bilcz/images'
+let g:netrw_dirhist_5='/home/trosh/music/com_truise_-_in_decay'

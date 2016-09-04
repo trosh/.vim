@@ -34,6 +34,11 @@ set wildmenu
 set incsearch
 set hlsearch
 
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set rtp+={repository_root}/powerline/bindings/vim
+
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap gV `[v`]
 
@@ -50,8 +55,8 @@ nnoremap td :tabclose<CR>
 
 nnoremap <S-h> gT
 nnoremap <S-l> gt
-" Highlight lines that overflow 80 columns
 
+" Highlight lines that overflow 80 columns
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
@@ -73,4 +78,18 @@ autocmd BufWinEnter *.* silent loadview
 
 " Enable use of the mouse for all modes
 set mouse=a
+
+" enable digraphs with {char 1} <BS> {char 2}
+set digraph
+
+" syntastic stuff
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
+"let g:ycm_register_as_syntastic_checker = 0
 
