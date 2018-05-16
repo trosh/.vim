@@ -17,12 +17,12 @@ set wildmenu
 " user friendly search
 set incsearch
 
-
 filetype plugin on
 
 syntax enable
 set tabstop=4
 set shiftwidth=4
+set smarttab
 set expandtab
 filetype indent on
 set autoindent
@@ -48,21 +48,21 @@ MapToggle <F11> ignorecase
 MapToggle <F12> paste
 "set pastetoggle=<F12>
 
-"colorscheme srcery
-"colorscheme badwolf
-"colorscheme colorsbox-material
-set background=dark
-colorscheme tender
+"set t_Co=256
+"let g:gruvbox_contrast_dark = "hard"
+colorscheme gruvbox
 
 " Enable use of the mouse for all modes
 " vital if you live in the 21st century
 set mouse=a
 
 " powerline stuff
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set rtp+={repository_root}/powerline/bindings/vim
+if !has("nvim")
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+    set rtp+={repository_root}/powerline/bindings/vim
+endif
 
 "set rtp=$HOME/src/powerline-2.5/powerline/bindings/vim
 
@@ -74,3 +74,16 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 noremap <c-b> :CtrlP $BXI_SRC_DIR/*
 noremap <c-t> :FZF $BXI_SRC_DIR/*
+
+" Syntastic stuff
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+noremap <F8> :lopen<cr>
+noremap <F9> :lclose<cr>
